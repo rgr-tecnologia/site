@@ -30,6 +30,7 @@ export function Header() {
             position: 'sticky',
             top: 0,
             margin: "0 auto",
+            maxWidth: "100%"
         }}>
             <Container
                 style={{

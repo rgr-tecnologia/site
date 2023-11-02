@@ -43,7 +43,8 @@ export function ConsultoriaProjetos() {
     return (
         <Container>
             <Container style={{
-                margin: "2rem 0 8rem 0"
+                margin: "2rem 0 4rem 0",
+                maxWidth: "1280px"
             }}>
                 <Text style={{
                     fontWeight: "bold",

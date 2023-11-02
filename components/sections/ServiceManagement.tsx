@@ -1,15 +1,22 @@
+import Image from "next/image";
 import { Card } from "../Card/Card";
 import { Container } from "../Container/Container";
 import { List } from "../List/List";
 import { Text } from "../Text/Text";
+import bars from '@/public/icons/bars.svg'
+import check from '@/public/icons/check.svg'
+import deviceDesktop from '@/public/icons/device-desktop.svg'
+import deviceWatch from '@/public/icons/device-watch.svg'
 
 type Service = {
     title: string;
     serviceList: string[];
+    icon: string;
 }
 
 const services: Service[] = [
     {
+        icon: deviceDesktop,
         title: "Network Operation Center (NOC)",
         serviceList: [
             "Equipe especializada em monitoramento de ativos de TI",
@@ -20,6 +27,7 @@ const services: Service[] = [
         ]
     },
     {
+        icon: deviceWatch,
         title: "Processos pré-definidos",
         serviceList: [
             "Processos bem definidos para rápida implantação",
@@ -29,6 +37,7 @@ const services: Service[] = [
         ]
     },
     {
+        icon: check,
         title: "Infraestrutura Física",
         serviceList: [
             "Cabeamento estruturado",
@@ -39,6 +48,7 @@ const services: Service[] = [
         ]
     },
     {
+        icon: bars,
         title: "Field Services",
         serviceList: [
             "Atendimento Território Nacional",
@@ -64,14 +74,19 @@ export function ServiceManagement() {
                                 width: "47%"
                             }}
                             key={index}>
-                            <Text style={{
-                                margin: "1rem 0",
-                                color: "#EA1F29",
-                                fontWeight: "bold",
-                                fontSize: "1.25rem"
-                            }}
-                            text={service.title}/>
-                            <Card>
+                            
+                            <Container style={{direction: "row"}}>
+                                <Image src={service.icon} alt={service.title} style={{paddingRight: '0.5rem'}}/>
+                                <Text 
+                                    style={{
+                                        margin: "1rem 0",
+                                        color: "#EA1F29",
+                                        fontWeight: "bold",
+                                        fontSize: "1.25rem"
+                                    }}
+                                    text={service.title}/>
+                            </Container>
+                            <Card style={{justifyContent: "flex-start"}}>
                                 <List 
                                     style={{
                                         fontSize: "0.875rem",

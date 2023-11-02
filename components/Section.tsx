@@ -13,7 +13,6 @@ export default function Section({id, children, style }: Props) {
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "center",
-                justifyContent: "center",
                 minHeight: "100vh",
                 backgroundColor: "#fff",
                 ...style

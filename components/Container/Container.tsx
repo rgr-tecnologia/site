@@ -45,7 +45,7 @@ export function Container(props: props) {
             border: style?.border,
             borderRadius: style?.borderRadius,
             padding: style?.padding,
-            margin: style?.margin || "0 auto",
+            margin: style?.margin,
             flexWrap: style?.flexWrap || "nowrap",
             flexBasis: style?.flexBasis || "auto",
             flexGrow: style?.flexGrow || "0",

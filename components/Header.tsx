@@ -25,45 +25,44 @@ export function Header() {
     return (
         <Container style={{
             backgroundColor: "#fff",
-            direction: "row",
             padding: "1rem",
             position: 'sticky',
             top: 0,
-            margin: "0 auto",
-            maxWidth: "100%"
+            maxWidth: "100%",
+            alignItems: "center",
         }}>
-            <Container
-                style={{
-                    flexBasis: "20%",
-                    margin: "0 2rem"
-                }}>
-                <Logo />
-            </Container>
-            <Container
-                style={{
-                    flexBasis: "80%",
-                    margin: "0 2rem"
-                }}>
-                <nav
+            <Container style={{
+                direction: "row",
+                width: "100%",
+                justifyContent: "space-between",
+            }}>
+                <Container>
+                    <Logo />
+                </Container>
+                <Container
                     style={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                        alignItems: "center",
                         width: "100%",
-                        fontWeight: "bold",
-                        color: "#000",                      
                     }}>
-                    {navOptions.map((navOption: navOption, index: number) => {
-                        return (
-                            <Link 
-                                href={navOption.href} 
-                                key={`nav-${index}`}
-                                style={navLinkStyle}>
-                                {navOption.label}
-                            </Link>
-                        )
-                    })}
-                </nav>
+                    <nav
+                        style={{
+                            display: "flex",
+                            justifyContent: "space-evenly",
+                            fontWeight: "bold",
+                            color: "#000",
+                            width: "100%",
+                        }}>
+                        {navOptions.map((navOption: navOption, index: number) => {
+                            return (
+                                <Link 
+                                    href={navOption.href} 
+                                    key={`nav-${index}`}
+                                    style={navLinkStyle}>
+                                    {navOption.label}
+                                </Link>
+                            )
+                        })}
+                    </nav>
+                </Container>
             </Container>
         </Container>
     )

@@ -33,7 +33,7 @@ const pageSections: pageSection[] = [
   },
   {
     id: "section-consultoria",
-    title: "Consultoria e Projetos",
+    title: "Consultoria & Projetos",
     content: <ConsultoriaProjetos />
   },
   {
@@ -48,12 +48,12 @@ const pageSections: pageSection[] = [
     id: "section-bigData",
     title: "BI & Big Data",
     content: <BigData />
-  },
-  {
+  }
+  /*{
     id: "section-contato",
     title: null,
     content: <></>
-  },
+  },*/
 ]
 
 export default function Home() {
@@ -71,9 +71,7 @@ export default function Home() {
             ...pageSection.style
           }}>
           <div>{pageSection.title && <SectionTitle text={pageSection.title} />}</div>
-          <div style={{
-            width: "100%",
-          }}>{pageSection.content}</div>
+          {pageSection.content}
         </Section>
       )
     })}

@@ -16,7 +16,8 @@ const textEnd = `A RGR trabalha constantemente na evolução de seus serviços e
 export function BigData() {
     return (
         <Container style={{
-            margin: "3rem 0"
+            margin: "3rem 0",
+            maxWidth: "768px",
         }}>
             <Container
                 style={{
@@ -31,7 +32,7 @@ export function BigData() {
             <Container
                 style={{
                     flexBasis: "50%",
-                    margin: "3rem 0"
+                    margin: "3rem auto"
                 }}>
                 {sectionText.map((text: string, index: number) => {
                     return <Text 

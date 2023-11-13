@@ -9,7 +9,7 @@ type style = {
 }
 
 type props = {
-    text: string
+    text: string | JSX.Element
     variant?: "span" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6"
     style?: style
 }

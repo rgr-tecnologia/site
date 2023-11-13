@@ -6,6 +6,7 @@ import Section from '@/components/Section'
 import SectionTitle from '@/components/SectionTitle'
 import { BigData } from '@/components/sections/BigData'
 import { ConsultoriaProjetos } from '@/components/sections/ConsultoriaProjetos'
+import { Contato } from '@/components/sections/Contato'
 import { FabricaSoftware } from '@/components/sections/FabricaSoftware'
 import { NossoDNA } from '@/components/sections/NossoDNA'
 import { ServiceManagement } from '@/components/sections/ServiceManagement'
@@ -48,12 +49,12 @@ const pageSections: pageSection[] = [
     id: "section-bigData",
     title: "BI & Big Data",
     content: <BigData />
-  }
-  /*{
+  },
+  {
     id: "section-contato",
     title: null,
-    content: <></>
-  },*/
+    content: <Contato />
+  }
 ]
 
 export default function Home() {

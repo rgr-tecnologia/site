@@ -1,5 +1,6 @@
-import { Container } from "../Container/Container";
+import { Container, Grid, Typography } from "@mui/material";
 import { Text } from "../Text/Text";
+import { ContactForm } from "../ContactForm";
 
 const textTitle = `Crie um mecanismo de análises práticas e relatórios gerenciais.`;
 
@@ -13,42 +14,53 @@ const sectionText = [
 
 export function BigData() {
   return (
-    <Container
-      style={{
-        margin: "3rem 0",
-        maxWidth: "768px",
-      }}
-    >
-      <Container
-        style={{
-          textAlign: "center",
-        }}
-      >
-        <Text
-          text={textTitle}
-          style={{
-            fontWeight: "bold",
-          }}
-        />
-      </Container>
-      <Container
-        style={{
-          flexBasis: "50%",
-          margin: "3rem auto",
-        }}
-      >
-        {sectionText.map((text: string, index: number) => {
-          return (
-            <Text
-              text={text}
-              key={`section-text-${index}`}
-              style={{
-                margin: "1rem 0",
-              }}
-            />
-          );
-        })}
-      </Container>
+    <Container>
+      <Grid container spacing={4}>
+        <Grid item container justifyContent={"center"} textAlign={"center"}>
+          <Text
+            text={textTitle}
+            style={{
+              fontWeight: "bold",
+            }}
+          />
+        </Grid>
+        <Grid item container spacing={4}>
+          {sectionText.map((text: string, index: number) => {
+            return (
+              <Grid item key={`section-text-${index}`}>
+                <Text text={text} />
+              </Grid>
+            );
+          })}
+        </Grid>
+
+        <Grid item container direction={"row"}>
+          <Grid container item xs={6}>
+            <Grid
+              container
+              item
+              justifyContent={"center"}
+              alignItems={"center"}
+            >
+              <Typography variant="h5" fontWeight={"bold"}>
+                A RGR trabalha constantemente na evolução de seus serviços e
+                processos para garantir a satisfação dos nossos clientes
+              </Typography>
+            </Grid>
+            <Grid item>
+              <Typography variant="body1">
+                Entre em contato conosco para qualquer dúvida, solicitação ou
+                suporte. Estamos ansiosos para te ouvir e ajudar no que for
+                necessário!
+              </Typography>
+            </Grid>
+          </Grid>
+
+          <Grid item xs={6}>
+            <ContactForm />
+          </Grid>
+        </Grid>
+      </Grid>
     </Container>
   );
 }

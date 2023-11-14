@@ -1,17 +1,10 @@
 "use client";
-import {
-  TextField,
-  FormControl,
-  Button,
-  Grid,
-  Paper,
-  Container,
-  InputLabel,
-  Card,
-  CardContent,
-  createTheme,
-  ThemeProvider,
-} from "@mui/material";
+import { LoadingButton } from "@mui/lab";
+import { TextField, Grid, InputLabel, Card, CardContent } from "@mui/material";
+
+import createTheme from "@mui/material/styles/createTheme";
+import ThemeProvider from "@mui/material/styles/ThemeProvider";
+import { useState } from "react";
 import { useForm, SubmitHandler, Controller } from "react-hook-form";
 
 const theme = createTheme({
@@ -41,21 +34,30 @@ export const ContactForm = () => {
     defaultValues,
   });
 
-  const onSubmit: SubmitHandler<Inputs> = (data) => {
+  const [isLoading, setIsLoading] = useState(false);
+
+  const onSubmit: SubmitHandler<Inputs> = async (data) => {
+    setIsLoading(true);
     try {
-      const response = fetch(`${API_URL}/email`, {
+      const response = await fetch(`${API_URL}/email`, {
         method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
         body: JSON.stringify(data),
       });
 
-      response.then((res) => {
-        if (res.status === 200) {
-          reset();
-        }
-      });
+      if (response.status === 200) {
+        reset();
+      } else if (response.status === 400) {
+        throw new Error("Erro ao enviar email");
+      }
     } catch (error) {
-      console.log(error);
+      if (error instanceof Error) {
+        console.error(error.message);
+      }
     }
+    setIsLoading(false);
   };
 
   return (
@@ -93,14 +95,15 @@ export const ContactForm = () => {
                 />
               </Grid>
               <Grid container item xs={12}>
-                <Button
+                <LoadingButton
+                  loading={isLoading}
                   variant="contained"
                   type="submit"
                   color="primary"
                   fullWidth
                 >
                   Enviar
-                </Button>
+                </LoadingButton>
               </Grid>
             </Grid>
           </form>

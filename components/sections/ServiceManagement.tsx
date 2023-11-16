@@ -88,7 +88,7 @@ export function ServiceManagement() {
                 spacing={1}
               >
                 <Grid item>
-                  <Image src={service.icon} alt={service.title} />
+                  <Image unoptimized src={service.icon} alt={service.title} />
                 </Grid>
                 <Grid item>
                   <Text

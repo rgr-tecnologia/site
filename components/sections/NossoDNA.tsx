@@ -44,6 +44,7 @@ export function NossoDNA() {
         <Grid container item xs={6}>
           <Box width={"100%"} height={"100%"} position={"relative"}>
             <Image
+              unoptimized
               src={"/thumb-1.png"}
               alt="Imagem de thumb da seção 'Nosso DNA'"
               fill

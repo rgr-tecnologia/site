@@ -57,7 +57,7 @@ export function FabricaSoftware() {
           </Grid>
           <Grid xs={6} item>
             <Box width={"100%"} height={"100%"} position={"relative"}>
-              <Image src={"/thumb-2.png"} alt="Nosso DNA" fill />
+              <Image unoptimized src={"/thumb-2.png"} alt="Nosso DNA" fill />
             </Box>
           </Grid>
         </Grid>

@@ -1,6 +1,6 @@
 import { Text } from "../Text/Text";
 import Image from "next/image";
-import BannerSVG from "../../public/banner.svg";
+import Thumb from "@/public/thumb-2.png";
 import { Container, Grid } from "@mui/material";
 
 const textTitle = `Todos nossos profissionais são capacitados com a visão de Arquiteturas e domínio de metodologias de desenvolvimento, 
@@ -49,7 +49,7 @@ export function FabricaSoftware() {
           </Grid>
           <Grid xs={6} item>
             <Image
-              src={BannerSVG}
+              src={Thumb}
               alt="Nosso DNA"
               style={{
                 width: "100%",

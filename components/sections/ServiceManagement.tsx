@@ -77,7 +77,7 @@ export function ServiceManagement() {
               item
               key={index}
               direction={"column"}
-              xs={6}
+              sm={6}
               spacing={1}
             >
               <Grid
@@ -102,10 +102,11 @@ export function ServiceManagement() {
                   />
                 </Grid>
               </Grid>
-              <Grid item height={"80%"}>
+              <Grid item container flexGrow={1} minHeight={"100%"}>
                 <Card
                   style={{
                     height: "100%",
+                    width: "100%",
                     border: ".09rem solid #EA1F29",
                     boxShadow: "none",
                   }}

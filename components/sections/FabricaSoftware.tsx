@@ -30,7 +30,16 @@ export function FabricaSoftware() {
             }}
           />
         </Grid>
-        <Grid item container direction={"row"} xs={11} spacing={4}>
+        <Grid
+          item
+          container
+          direction={{
+            xs: "column",
+            md: "row",
+          }}
+          xs={11}
+          spacing={4}
+        >
           <Grid
             container
             item

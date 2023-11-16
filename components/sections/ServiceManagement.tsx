@@ -60,7 +60,16 @@ const services: Service[] = [
 export function ServiceManagement() {
   return (
     <Container>
-      <Grid container spacing={2} direction={"row"}>
+      <Grid
+        container
+        spacing={2}
+        direction={{
+          xs: "column",
+          md: "row",
+        }}
+        justifyContent={"center"}
+        alignItems={"center"}
+      >
         {services.map((service: Service, index: number) => {
           return (
             <Grid

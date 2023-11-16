@@ -1,7 +1,10 @@
+"use client";
+
 import Link from "next/link";
 import Logo from "./Logo";
-import { CSSProperties } from "react";
-import { AppBar, Box, Container, Grid, Menu } from "@mui/material";
+import { CSSProperties, useState } from "react";
+import { AppBar, Box, Container, Grid, IconButton, Menu } from "@mui/material";
+import MenuIcon from "@mui/icons-material/Menu";
 
 type navOption = {
   label: string;
@@ -23,92 +26,73 @@ const navLinkStyle: CSSProperties = {
   fontWeight: "bold",
 };
 
+const NavOptions = () => {
+  return (
+    <>
+      {navOptions.map((navOption: navOption, index: number) => {
+        return (
+          <Link href={navOption.href} key={`nav-${index}`} style={navLinkStyle}>
+            {navOption.label}
+          </Link>
+        );
+      })}
+    </>
+  );
+};
+
 export function Header() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const handleOpenNavMenu = () => {
+    setIsMenuOpen(true);
+  };
+
+  const handleCloseNavMenu = () => {
+    setIsMenuOpen(false);
+  };
+
   return (
     <AppBar
       style={{
         backgroundColor: "#fff",
       }}
+      position="sticky"
     >
       <Container>
-        <Grid container padding={2}>
-          <Grid item xs={2}>
+        <Grid container paddingY={2} direction={"row"}>
+          <Grid
+            item
+            container
+            xs={1}
+            sm={0}
+            display={{ xs: "flex", sm: "none" }}
+            justifyContent={"center"}
+          >
+            <IconButton
+              color="inherit"
+              aria-label="open drawer"
+              edge="start"
+              onClick={handleOpenNavMenu}
+            >
+              <MenuIcon style={{ color: "#aaa" }} />
+            </IconButton>
+          </Grid>
+          <Grid item xs={11} sm={2}>
             <Logo />
           </Grid>
           <Grid
             item
             container
-            xs={10}
+            xs={0}
+            sm={10}
             justifyContent={"space-around"}
             alignItems={"center"}
+            display={{ xs: "none", sm: "flex" }}
           >
-            {navOptions.map((navOption: navOption, index: number) => {
-              return (
-                <Link
-                  href={navOption.href}
-                  key={`nav-${index}`}
-                  style={navLinkStyle}
-                >
-                  {navOption.label}
-                </Link>
-              );
-            })}
+            <NavOptions />
           </Grid>
         </Grid>
       </Container>
     </AppBar>
   );
 }
-
-/*
-    <Container
-      style={{
-        backgroundColor: "#fff",
-        padding: "1rem",
-        position: "sticky",
-        top: 0,
-        maxWidth: "100%",
-        alignItems: "center",
-      }}
-    >
-      <Container
-        style={{
-          direction: "row",
-          width: "100%",
-          justifyContent: "space-between",
-        }}
-      >
-        <Container>
-          <Logo />
-        </Container>
-        <Container
-          style={{
-            width: "100%",
-          }}
-        >
-          <nav
-            style={{
-              display: "flex",
-              justifyContent: "space-evenly",
-              fontWeight: "bold",
-              color: "#000",
-              width: "100%",
-            }}
-          >
-            {navOptions.map((navOption: navOption, index: number) => {
-              return (
-                <Link
-                  href={navOption.href}
-                  key={`nav-${index}`}
-                  style={navLinkStyle}
-                >
-                  {navOption.label}
-                </Link>
-              );
-            })}
-          </nav>
-        </Container>
-      </Container>
-    </Container>
-
-*/

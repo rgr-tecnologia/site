@@ -15,7 +15,7 @@ const sectionText = [
 export function BigData() {
   return (
     <Container>
-      <Grid container spacing={4}>
+      <Grid container spacing={2}>
         <Grid item container justifyContent={"center"} textAlign={"center"}>
           <Text
             text={textTitle}
@@ -24,7 +24,7 @@ export function BigData() {
             }}
           />
         </Grid>
-        <Grid item container spacing={4} textAlign={"justify"}>
+        <Grid item container spacing={2} textAlign={"justify"}>
           {sectionText.map((text: string, index: number) => {
             return (
               <Grid item key={`section-text-${index}`}>
@@ -34,8 +34,16 @@ export function BigData() {
           })}
         </Grid>
 
-        <Grid item container direction={"row"} spacing={4}>
-          <Grid container item xs={6}>
+        <Grid
+          item
+          container
+          direction={{
+            xs: "column",
+            md: "row",
+          }}
+          spacing={4}
+        >
+          <Grid container item sm={6} spacing={2}>
             <Grid
               container
               item
@@ -57,7 +65,7 @@ export function BigData() {
             </Grid>
           </Grid>
 
-          <Grid item xs={6}>
+          <Grid item sm={6}>
             <ContactForm />
           </Grid>
         </Grid>

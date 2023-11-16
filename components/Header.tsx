@@ -77,14 +77,16 @@ export function Header() {
               <MenuIcon style={{ color: "#aaa" }} />
             </IconButton>
           </Grid>
-          <Grid item xs={11} sm={2}>
-            <Logo />
+          <Grid item xs={11} sm={1}>
+            <Box width={"100%"} height={"100%"} position={"relative"}>
+              <Logo />
+            </Box>
           </Grid>
           <Grid
             item
             container
             xs={0}
-            sm={10}
+            sm={11}
             justifyContent={"space-around"}
             alignItems={"center"}
             display={{ xs: "none", sm: "flex" }}

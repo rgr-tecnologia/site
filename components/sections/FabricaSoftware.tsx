@@ -1,7 +1,6 @@
 import { Text } from "../Text/Text";
 import Image from "next/image";
-import Thumb from "@/public/thumb-2.png";
-import { Container, Grid } from "@mui/material";
+import { Container, Grid, Box } from "@mui/material";
 
 const textTitle = `Todos nossos profissionais são capacitados com a visão de Arquiteturas e domínio de metodologias de desenvolvimento, 
 além de fazerem uso das melhores práticas em ampla gama de ferramentas e linguagens.`;
@@ -57,14 +56,9 @@ export function FabricaSoftware() {
             })}
           </Grid>
           <Grid xs={6} item>
-            <Image
-              src={Thumb}
-              alt="Nosso DNA"
-              style={{
-                width: "100%",
-                height: "100%",
-              }}
-            />
+            <Box width={"100%"} height={"100%"} position={"relative"}>
+              <Image src={"/thumb-2.png"} alt="Nosso DNA" fill />
+            </Box>
           </Grid>
         </Grid>
       </Grid>

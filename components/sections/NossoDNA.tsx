@@ -1,7 +1,6 @@
 import { Text } from "../Text/Text";
-import Thumb from "@/public/thumb-1.png";
 import Image from "next/image";
-import { Container, Grid } from "@mui/material";
+import { Container, Grid, Box } from "@mui/material";
 
 const text = [
   `Trabalhamos no limite da transformação, inovação, flexibilidade e adaptação Tecnológica.`,
@@ -42,18 +41,14 @@ export function NossoDNA() {
             );
           })}
         </Grid>
-        <Grid item xs={6}>
-          <Container>
+        <Grid container item xs={6}>
+          <Box width={"100%"} height={"100%"} position={"relative"}>
             <Image
-              objectFit="cover"
-              src={Thumb}
-              alt="Nosso DNA"
-              style={{
-                width: "100%",
-                height: "100%",
-              }}
+              src={"/thumb-1.png"}
+              alt="Imagem de thumb da seção 'Nosso DNA'"
+              fill
             />
-          </Container>
+          </Box>
         </Grid>
       </Grid>
     </Container>

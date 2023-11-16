@@ -1,5 +1,5 @@
 import { Text } from "../Text/Text";
-import BannerSVG from "../../public/banner.svg";
+import Thumb from "@/public/thumb-1.png";
 import Image from "next/image";
 import { Container, Grid } from "@mui/material";
 
@@ -46,7 +46,7 @@ export function NossoDNA() {
           <Container>
             <Image
               objectFit="cover"
-              src={BannerSVG}
+              src={Thumb}
               alt="Nosso DNA"
               style={{
                 width: "100%",

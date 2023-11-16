@@ -34,7 +34,7 @@ const pageSections: pageSection[] = [
   {
     id: "section-consultoria",
     title: "Consultoria & Projetos",
-    content: <ConsultoriaProjetos />,
+    content: <></>,
   },
   {
     id: "section-fabrica",

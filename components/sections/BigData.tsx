@@ -24,7 +24,7 @@ export function BigData() {
             }}
           />
         </Grid>
-        <Grid item container spacing={4}>
+        <Grid item container spacing={4} textAlign={"justify"}>
           {sectionText.map((text: string, index: number) => {
             return (
               <Grid item key={`section-text-${index}`}>
@@ -34,13 +34,14 @@ export function BigData() {
           })}
         </Grid>
 
-        <Grid item container direction={"row"}>
+        <Grid item container direction={"row"} spacing={4}>
           <Grid container item xs={6}>
             <Grid
               container
               item
               justifyContent={"center"}
               alignItems={"center"}
+              textAlign={"justify"}
             >
               <Typography variant="h5" fontWeight={"bold"}>
                 A RGR trabalha constantemente na evolução de seus serviços e

@@ -22,7 +22,7 @@ export function NossoDNA() {
   return (
     <Container>
       <Grid container direction={"row"} spacing={4}>
-        <Grid item container direction={"column"} xs={6}>
+        <Grid item container direction={"column"} xs={6} textAlign={"justify"}>
           {text.map((paragraph: string, index: number) => {
             return (
               <Text

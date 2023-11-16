@@ -7,6 +7,12 @@ const saira = Saira({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "RGR",
   description: "Site RGR",
+  icons: [
+    {
+      rel: "icon",
+      url: "/favicon.ico",
+    },
+  ],
 };
 
 export default function RootLayout({

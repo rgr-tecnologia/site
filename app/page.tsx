@@ -58,7 +58,13 @@ export default function Home() {
       <Header />
       <Box
         width={"100%"}
-        height={"50vh"}
+        height={{
+          xs: 128,
+          sm: 400,
+          md: 500,
+          lg: 600,
+          xl: 700,
+        }}
         maxHeight={1459}
         position={"relative"}
       >

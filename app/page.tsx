@@ -59,7 +59,7 @@ export default function Home() {
       <Box
         width={"100%"}
         height={{
-          sm: 384,
+          sm: 350,
         }}
         display={{
           xs: "none",

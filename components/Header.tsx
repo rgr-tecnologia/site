@@ -59,8 +59,13 @@ export function Header() {
       position="sticky"
     >
       <Container>
-        <Grid container paddingY={2} direction={"row"}>
-          <Grid item xs={11} sm={1}>
+        <Grid
+          container
+          paddingY={2}
+          direction={"row"}
+          justifyContent={"space-between"}
+        >
+          <Grid item xs={2} sm={1}>
             <Box width={"100%"} height={"100%"} position={"relative"}>
               <Logo />
             </Box>

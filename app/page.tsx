@@ -9,6 +9,7 @@ import { ConsultoriaProjetos } from "@/components/sections/ConsultoriaProjetos";
 import { FabricaSoftware } from "@/components/sections/FabricaSoftware";
 import { NossoDNA } from "@/components/sections/NossoDNA";
 import { ServiceManagement } from "@/components/sections/ServiceManagement";
+import { Box } from "@mui/material";
 
 type pageSection = {
   id: string;
@@ -55,7 +56,14 @@ export default function Home() {
   return (
     <Overlay>
       <Header />
-      <Banner />
+      <Box
+        width={"100%"}
+        height={"50vh"}
+        maxHeight={1459}
+        position={"relative"}
+      >
+        <Banner />
+      </Box>
       {pageSections.map((pageSection: pageSection, index: number) => {
         return (
           <Section

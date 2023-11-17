@@ -60,6 +60,22 @@ export function Header() {
     >
       <Container>
         <Grid container paddingY={2} direction={"row"}>
+          <Grid item xs={11} sm={1}>
+            <Box width={"100%"} height={"100%"} position={"relative"}>
+              <Logo />
+            </Box>
+          </Grid>
+          <Grid
+            item
+            container
+            xs={0}
+            sm={11}
+            justifyContent={"space-around"}
+            alignItems={"center"}
+            display={{ xs: "none", sm: "flex" }}
+          >
+            <NavOptions />
+          </Grid>
           <Grid
             item
             container
@@ -76,22 +92,6 @@ export function Header() {
             >
               <MenuIcon style={{ color: "#aaa" }} />
             </IconButton>
-          </Grid>
-          <Grid item xs={11} sm={1}>
-            <Box width={"100%"} height={"100%"} position={"relative"}>
-              <Logo />
-            </Box>
-          </Grid>
-          <Grid
-            item
-            container
-            xs={0}
-            sm={11}
-            justifyContent={"space-around"}
-            alignItems={"center"}
-            display={{ xs: "none", sm: "flex" }}
-          >
-            <NavOptions />
           </Grid>
         </Grid>
       </Container>

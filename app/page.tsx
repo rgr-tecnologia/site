@@ -59,11 +59,11 @@ export default function Home() {
       <Box
         width={"100%"}
         height={{
-          xs: 128,
-          sm: 400,
-          md: 500,
-          lg: 600,
-          xl: 700,
+          sm: 384,
+        }}
+        display={{
+          xs: "none",
+          sm: "block",
         }}
         maxHeight={1459}
         position={"relative"}

@@ -32,11 +32,11 @@ const pageSections: pageSection[] = [
       backgroundColor: "#FEF7F7",
     },
   },
-  {
-    id: "section-consultoria",
-    title: "Consultoria & Projetos",
-    content: <></>,
-  },
+  // {
+  //   id: "section-consultoria",
+  //   title: "Consultoria & Projetos",
+  //   content: <ConsultoriaProjetos/>,
+  // },
   {
     id: "section-fabrica",
     title: "Fábrica de Software",

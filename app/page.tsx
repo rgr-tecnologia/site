@@ -34,7 +34,7 @@ const pageSections: pageSection[] = [
   },
   // {
   //   id: "section-consultoria",
-  //   title: "Consultoria & Projetos",
+  //   title: "Consultoria e Projetos",
   //   content: <ConsultoriaProjetos/>,
   // },
   {
@@ -47,7 +47,7 @@ const pageSections: pageSection[] = [
   },
   {
     id: "section-bigData",
-    title: "BI & Big Data",
+    title: "BI e Big Data",
     content: <BigData />,
   },
 ];

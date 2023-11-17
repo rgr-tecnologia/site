@@ -58,15 +58,16 @@ export default function Home() {
       <Header />
       <Box
         width={"100%"}
-        height={{
-          sm: 350,
-        }}
         display={{
           xs: "none",
           sm: "block",
         }}
-        maxHeight={1459}
+        maxHeight={350}
         position={"relative"}
+        sx={{
+          position: "relative",
+          aspectRatio: "1920/350",
+        }}
       >
         <Banner />
       </Box>

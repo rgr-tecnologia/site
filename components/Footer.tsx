@@ -14,7 +14,13 @@ export default function Footer() {
       }}
     >
       <Container>
-        <Grid container spacing={2} paddingY={2} textAlign={"center"}>
+        <Grid
+          container
+          spacing={2}
+          paddingY={2}
+          textAlign={"start"}
+          direction={"column"}
+        >
           <Grid item xs={12} sm={6}>
             <Typography variant="body1">
               Rua Enxovia 472 - Sala 905 - Edifício Neo Corporate Office (Zona

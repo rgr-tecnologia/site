@@ -1,8 +1,6 @@
+import { Theme } from "@/themes/Theme";
 import "./globals.css";
 import type { Metadata } from "next";
-import { Saira } from "next/font/google";
-
-const saira = Saira({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "RGR",
@@ -27,7 +25,9 @@ export default function RootLayout({
         scrollBehavior: "smooth",
       }}
     >
-      <body className={saira.className}>{children}</body>
+      <body>
+        <Theme>{children}</Theme>
+      </body>
     </html>
   );
 }

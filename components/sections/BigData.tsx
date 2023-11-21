@@ -41,16 +41,10 @@ export function BigData() {
             xs: "column",
             md: "row",
           }}
-          spacing={4}
+          spacing={2}
         >
           <Grid container item sm={6} spacing={2}>
-            <Grid
-              container
-              item
-              justifyContent={"center"}
-              alignItems={"center"}
-              textAlign={"justify"}
-            >
+            <Grid item>
               <Typography variant="h5" fontWeight={"bold"}>
                 A RGR trabalha constantemente na evolução de seus serviços e
                 processos para garantir a satisfação dos nossos clientes

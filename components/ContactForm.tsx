@@ -1,19 +1,8 @@
 "use client";
 import { LoadingButton } from "@mui/lab";
 import { TextField, Grid, InputLabel, Card, CardContent } from "@mui/material";
-
-import createTheme from "@mui/material/styles/createTheme";
-import ThemeProvider from "@mui/material/styles/ThemeProvider";
 import { useState } from "react";
 import { useForm, SubmitHandler, Controller } from "react-hook-form";
-
-const theme = createTheme({
-  palette: {
-    primary: {
-      main: "#EA1F29",
-    },
-  },
-});
 
 type Inputs = {
   name: string;
@@ -61,55 +50,53 @@ export const ContactForm = () => {
   };
 
   return (
-    <ThemeProvider theme={theme}>
-      <Card
-        style={{
-          backgroundColor: "#f5f5f5",
-        }}
-      >
-        <CardContent>
-          <form onSubmit={handleSubmit(onSubmit)}>
-            <Grid container spacing={2} justifyContent={"center"}>
-              <Grid container direction={"column"} item xs={12}>
-                <InputText
-                  label="Nome"
-                  name="name"
-                  control={control}
-                  rules={{ required: true }}
-                />
-              </Grid>
-              <Grid container direction={"column"} item xs={12}>
-                <InputText
-                  label="Email"
-                  name="email"
-                  control={control}
-                  rules={{ required: true }}
-                />
-              </Grid>
-              <Grid container direction={"column"} item xs={12}>
-                <InputText
-                  label="Mensagem"
-                  name="message"
-                  control={control}
-                  rules={{ required: true }}
-                />
-              </Grid>
-              <Grid container item xs={12}>
-                <LoadingButton
-                  loading={isLoading}
-                  variant="contained"
-                  type="submit"
-                  color="primary"
-                  fullWidth
-                >
-                  Enviar
-                </LoadingButton>
-              </Grid>
+    <Card
+      style={{
+        backgroundColor: "#f5f5f5",
+      }}
+    >
+      <CardContent>
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <Grid container spacing={2} justifyContent={"center"}>
+            <Grid container direction={"column"} item xs={12}>
+              <InputText
+                label="Nome"
+                name="name"
+                control={control}
+                rules={{ required: true }}
+              />
             </Grid>
-          </form>
-        </CardContent>
-      </Card>
-    </ThemeProvider>
+            <Grid container direction={"column"} item xs={12}>
+              <InputText
+                label="Email"
+                name="email"
+                control={control}
+                rules={{ required: true }}
+              />
+            </Grid>
+            <Grid container direction={"column"} item xs={12}>
+              <InputText
+                label="Mensagem"
+                name="message"
+                control={control}
+                rules={{ required: true }}
+              />
+            </Grid>
+            <Grid container item xs={12}>
+              <LoadingButton
+                loading={isLoading}
+                variant="contained"
+                type="submit"
+                color="primary"
+                fullWidth
+              >
+                Enviar
+              </LoadingButton>
+            </Grid>
+          </Grid>
+        </form>
+      </CardContent>
+    </Card>
   );
 };
 

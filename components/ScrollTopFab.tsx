@@ -11,25 +11,34 @@ export function ScrollTopFab() {
   });
 
   return (
-    <>
+    <Box
+      sx={{
+        position: "fixed",
+        bottom: 124,
+        right: 16,
+      }}
+      display={{
+        xs: "none",
+        sm: "block",
+      }}
+    >
       <Fade in={trigger}>
-        <Box
-          role="presentation"
-          sx={{
-            position: "fixed",
-            bottom: 16,
-            right: 16,
-          }}
-        >
+        <Box role="presentation">
           <Fab
             size="medium"
             aria-label="botão voltar ao início"
             color="primary"
+            onClick={() => {
+              window.scrollTo({
+                top: 0,
+                behavior: "smooth",
+              });
+            }}
           >
             <KeyboardArrowUpIcon />
           </Fab>
         </Box>
       </Fade>
-    </>
+    </Box>
   );
 }

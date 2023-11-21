@@ -1,6 +1,9 @@
 import { Theme } from "@/themes/Theme";
 import "./globals.css";
 import type { Metadata } from "next";
+import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
+import { ScrollTopFab } from "@/components/ScrollTopFab";
 
 export const metadata: Metadata = {
   title: "RGR",
@@ -26,7 +29,12 @@ export default function RootLayout({
       }}
     >
       <body>
-        <Theme>{children}</Theme>
+        <Theme>
+          <Header />
+          {children}
+          <ScrollTopFab />
+          <Footer />
+        </Theme>
       </body>
     </html>
   );

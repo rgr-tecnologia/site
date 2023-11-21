@@ -65,8 +65,16 @@ export function Header() {
           direction={"row"}
           justifyContent={"space-between"}
         >
-          <Grid item xs={2} sm={1}>
-            <Box width={"100%"} height={"100%"} position={"relative"}>
+          <Grid item xs={4} sm={1}>
+            <Box
+              width={"100%"}
+              height={"100%"}
+              position={"relative"}
+              sx={{
+                position: "relative",
+                aspectRatio: "2381/794",
+              }}
+            >
               <Logo />
             </Box>
           </Grid>

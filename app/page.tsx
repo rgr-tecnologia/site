@@ -1,15 +1,14 @@
 import Banner from "@/components/Banner";
-import Footer from "@/components/Footer";
-import { Header } from "@/components/Header";
-import Overlay from "@/components/Overlay";
+import { Container } from "@/components/Container/Container";
 import Section from "@/components/Section";
 import SectionTitle from "@/components/SectionTitle";
+import { SocialMediaLinks } from "@/components/SocialMediaLinks";
 import { BigData } from "@/components/sections/BigData";
 import { ConsultoriaProjetos } from "@/components/sections/ConsultoriaProjetos";
 import { FabricaSoftware } from "@/components/sections/FabricaSoftware";
 import { NossoDNA } from "@/components/sections/NossoDNA";
 import { ServiceManagement } from "@/components/sections/ServiceManagement";
-import { Box } from "@mui/material";
+import { Box, Grid } from "@mui/material";
 
 type pageSection = {
   id: string;
@@ -54,15 +53,13 @@ const pageSections: pageSection[] = [
 
 export default function Home() {
   return (
-    <Overlay>
-      <Header />
+    <>
       <Box
         width={"100%"}
         display={{
           xs: "none",
           sm: "block",
         }}
-        maxHeight={350}
         position={"relative"}
         sx={{
           position: "relative",
@@ -71,6 +68,13 @@ export default function Home() {
       >
         <Banner />
       </Box>
+
+      <Container>
+        <Grid container justifyContent={"flex-end"} paddingY={1}>
+          <SocialMediaLinks />
+        </Grid>
+      </Container>
+
       {pageSections.map((pageSection: pageSection, index: number) => {
         return (
           <Section
@@ -88,7 +92,6 @@ export default function Home() {
           </Section>
         );
       })}
-      <Footer />
-    </Overlay>
+    </>
   );
 }

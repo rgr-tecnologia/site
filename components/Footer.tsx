@@ -1,4 +1,4 @@
-import { Container, Grid, Typography } from "@mui/material";
+import { Box, Container, Grid, Typography } from "@mui/material";
 import { SocialMediaLinks } from "./SocialMediaLinks";
 
 export function Footer() {
@@ -17,8 +17,7 @@ export function Footer() {
             xs: "column",
             sm: "row",
           }}
-          paddingY={1}
-          spacing={2}
+          paddingY={2}
         >
           <Grid
             item
@@ -48,11 +47,14 @@ export function Footer() {
               xs: "center",
               sm: "flex-end",
             }}
+            alignItems={"center"}
             xs={4}
             sm={6}
             color={"#fff"}
           >
-            <SocialMediaLinks />
+            <Box>
+              <SocialMediaLinks />
+            </Box>
           </Grid>
         </Grid>
       </Container>

@@ -12,28 +12,14 @@ export const SocialMediaLinks = () => {
           "inherit" /* TODO: Change to "primary" when the theme is ready */
         }
       >
-        <LinkedInIcon
-          sx={{
-            fontSize: {
-              xs: "2rem",
-              sm: "1.5rem",
-            },
-          }}
-        />
+        <LinkedInIcon />
       </IconButton>
       <IconButton
         color={
           "inherit" /* TODO: Change to "primary" when the theme is ready */
         }
       >
-        <InstagramIcon
-          sx={{
-            fontSize: {
-              xs: "2rem",
-              sm: "1.5rem",
-            },
-          }}
-        />
+        <InstagramIcon />
       </IconButton>
     </>
   );

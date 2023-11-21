@@ -3,16 +3,26 @@
 import Link from "next/link";
 import Logo from "./Logo";
 import { CSSProperties, useState } from "react";
-import { AppBar, Box, Container, Grid, IconButton, Menu } from "@mui/material";
+import {
+  AppBar,
+  Box,
+  Container,
+  Divider,
+  Drawer,
+  Grid,
+  IconButton,
+  List,
+  ListItem,
+} from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 
-type navOption = {
+type linkOption = {
   label: string;
   href: string;
 };
-type navOptions = navOption[];
+type linkOptions = linkOption[];
 
-const navOptions: navOptions = [
+const linkOptions: linkOptions = [
   { label: "Nosso DNA", href: "#section-dna" },
   { label: "Service Management", href: "#section-servicos" },
   { label: "Consultoria e Projetos", href: "#section-consultoria" },
@@ -20,7 +30,7 @@ const navOptions: navOptions = [
   { label: "BI e Big Data", href: "#section-bigData" },
 ];
 
-const navLinkStyle: CSSProperties = {
+const linkStyle: CSSProperties = {
   color: "#000",
   textDecoration: "none",
   fontWeight: "bold",
@@ -29,14 +39,28 @@ const navLinkStyle: CSSProperties = {
 const NavOptions = () => {
   return (
     <>
-      {navOptions.map((navOption: navOption, index: number) => {
+      {linkOptions.map((linkOption, index) => {
         return (
-          <Link href={navOption.href} key={`nav-${index}`} style={navLinkStyle}>
-            {navOption.label}
+          <Link href={linkOption.href} key={`nav-${index}`} style={linkStyle}>
+            {linkOption.label}
           </Link>
         );
       })}
     </>
+  );
+};
+
+const DrawerOptions = () => {
+  return (
+    <List>
+      {linkOptions.map((linkOption, index) => (
+        <ListItem key={`nav-${index}`} sx={{ textAlign: "center" }}>
+          <Link href={linkOption.href} style={linkStyle}>
+            {linkOption.label}
+          </Link>
+        </ListItem>
+      ))}
+    </List>
   );
 };
 
@@ -107,6 +131,39 @@ export function Header() {
             </IconButton>
           </Grid>
         </Grid>
+        <nav>
+          <Drawer
+            variant="temporary"
+            open={isMenuOpen}
+            onClose={handleCloseNavMenu}
+            ModalProps={{
+              keepMounted: true, // Better open performance on mobile.
+            }}
+            sx={{
+              display: { xs: "block", sm: "none" },
+            }}
+          >
+            <Container
+              style={{
+                padding: "1rem",
+              }}
+            >
+              <Box
+                width={"100%"}
+                height={"100%"}
+                position={"relative"}
+                sx={{
+                  position: "relative",
+                  aspectRatio: "2381/794",
+                }}
+              >
+                <Logo />
+              </Box>
+            </Container>
+            <Divider />
+            <DrawerOptions />
+          </Drawer>
+        </nav>
       </Container>
     </AppBar>
   );

@@ -69,12 +69,6 @@ export default function Home() {
         <Banner />
       </Box>
 
-      <Container>
-        <Grid container justifyContent={"flex-end"} paddingY={1}>
-          <SocialMediaLinks />
-        </Grid>
-      </Container>
-
       {pageSections.map((pageSection: pageSection, index: number) => {
         return (
           <Section

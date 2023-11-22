@@ -1,5 +1,4 @@
-import Image from "next/image";
-import { Container } from "./Container/Container";
+import { Typography } from "@mui/material";
 
 type Props = {
   text: string;
@@ -7,23 +6,14 @@ type Props = {
 
 export default function SectionTitle({ text }: Props) {
   return (
-    <Container
-      style={{
-        direction: "row",
-      }}
+    <Typography
+      variant="h4"
+      borderBottom={"0.25rem solid #EA1F29"}
+      fontWeight={"bold"}
+      textAlign={"center"}
+      paddingBottom={"0.5rem"}
     >
-      <h1
-        style={{
-          fontSize: "2rem",
-          textAlign: "center",
-          fontWeight: "bold",
-          borderBottom: "0.25rem solid #EA1F29",
-          paddingBottom: "1rem",
-          margin: "0 0 2rem 0",
-        }}
-      >
-        {text}
-      </h1>
-    </Container>
+      {text}
+    </Typography>
   );
 }

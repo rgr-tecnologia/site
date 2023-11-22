@@ -61,7 +61,7 @@ export function ServiceManagement() {
     <Container>
       <Grid
         container
-        spacing={2}
+        spacing={4}
         direction={{
           xs: "column",
           md: "row",
@@ -78,7 +78,16 @@ export function ServiceManagement() {
               sm={6}
               spacing={1}
             >
-              <Grid item container direction={"row"} spacing={1}>
+              <Grid
+                item
+                container
+                direction={"row"}
+                spacing={1}
+                justifyContent={{
+                  xs: "flex-start",
+                  sm: "center",
+                }}
+              >
                 <Grid item>{service.icon}</Grid>
                 <Grid item>
                   <Typography
@@ -94,7 +103,7 @@ export function ServiceManagement() {
                 <Card
                   style={{
                     width: "100%",
-                    border: ".09rem solid #EA1F29",
+                    border: ".09rem solid #F69D9D",
                   }}
                 >
                   <CardContent>

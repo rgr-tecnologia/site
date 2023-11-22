@@ -1,8 +1,5 @@
 import Banner from "@/components/Banner";
-import { Container } from "@/components/Container/Container";
-import Section from "@/components/Section";
 import SectionTitle from "@/components/SectionTitle";
-import { SocialMediaLinks } from "@/components/SocialMediaLinks";
 import { BigData } from "@/components/sections/BigData";
 import { ConsultoriaProjetos } from "@/components/sections/ConsultoriaProjetos";
 import { FabricaSoftware } from "@/components/sections/FabricaSoftware";
@@ -31,11 +28,11 @@ const pageSections: pageSection[] = [
       backgroundColor: "#FEF7F7",
     },
   },
-  // {
-  //   id: "section-consultoria",
-  //   title: "Consultoria e Projetos",
-  //   content: <ConsultoriaProjetos/>,
-  // },
+  {
+    id: "section-consultoria",
+    title: "Consultoria e Projetos",
+    content: <ConsultoriaProjetos />,
+  },
   {
     id: "section-fabrica",
     title: "Fábrica de Software",
@@ -51,7 +48,7 @@ const pageSections: pageSection[] = [
   },
 ];
 
-export default function Home() {
+export default function Page() {
   return (
     <>
       <Box
@@ -71,19 +68,21 @@ export default function Home() {
 
       {pageSections.map((pageSection: pageSection, index: number) => {
         return (
-          <Section
-            id={pageSection.id}
+          <Grid
+            container
             key={`section-${index}`}
-            style={{
-              padding: "1.5rem",
-              ...pageSection.style,
-            }}
+            id={pageSection.id}
+            style={pageSection.style}
+            direction={"column"}
+            paddingY={4}
           >
-            <div>
+            <Grid container item justifyContent={"center"} paddingBottom={4}>
               {pageSection.title && <SectionTitle text={pageSection.title} />}
-            </div>
-            {pageSection.content}
-          </Section>
+            </Grid>
+            <Grid container item justifyContent={"center"}>
+              {pageSection.content}
+            </Grid>
+          </Grid>
         );
       })}
     </>

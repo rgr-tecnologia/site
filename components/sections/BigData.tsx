@@ -1,5 +1,4 @@
 import { Container, Grid, Typography } from "@mui/material";
-import { Text } from "../Text/Text";
 import { ContactForm } from "../ContactForm";
 
 const textTitle = `Crie um mecanismo de análises práticas e relatórios gerenciais.`;
@@ -17,18 +16,19 @@ export function BigData() {
     <Container>
       <Grid container spacing={4}>
         <Grid item container justifyContent={"center"} textAlign={"center"}>
-          <Text
-            text={textTitle}
+          <Typography
             style={{
               fontWeight: "bold",
             }}
-          />
+          >
+            {textTitle}
+          </Typography>
         </Grid>
         <Grid item container spacing={2} textAlign={"justify"}>
           {sectionText.map((text: string, index: number) => {
             return (
               <Grid item key={`section-text-${index}`}>
-                <Text text={text} />
+                <Typography>{text}</Typography>
               </Grid>
             );
           })}

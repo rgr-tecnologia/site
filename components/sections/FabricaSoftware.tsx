@@ -1,6 +1,5 @@
-import { Text } from "../Text/Text";
 import Image from "next/image";
-import { Container, Grid, Box } from "@mui/material";
+import { Container, Grid, Box, Typography } from "@mui/material";
 
 const textTitle = `Todos nossos profissionais são capacitados com a visão de Arquiteturas e domínio de metodologias de desenvolvimento, 
 além de fazerem uso das melhores práticas em ampla gama de ferramentas e linguagens.`;
@@ -30,12 +29,13 @@ export function FabricaSoftware() {
           }}
           xs={1}
         >
-          <Text
-            text={textTitle}
+          <Typography
             style={{
               fontWeight: "bold",
             }}
-          />
+          >
+            {textTitle}
+          </Typography>
         </Grid>
         <Grid
           item
@@ -58,7 +58,7 @@ export function FabricaSoftware() {
             {sectionText.map((text: string, index: number) => {
               return (
                 <Grid item key={`section-text-${index}`}>
-                  <Text text={text} />
+                  <Typography>{text}</Typography>
                 </Grid>
               );
             })}

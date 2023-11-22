@@ -1,6 +1,5 @@
-import { Text } from "../Text/Text";
 import Image from "next/image";
-import { Container, Grid, Box } from "@mui/material";
+import { Container, Grid, Box, Typography } from "@mui/material";
 
 const text = [
   `Trabalhamos no limite da transformação, inovação, flexibilidade e adaptação Tecnológica.`,
@@ -31,13 +30,14 @@ export function NossoDNA() {
         <Grid item container direction={"column"} xs={6} textAlign={"justify"}>
           {text.map((paragraph: string, index: number) => {
             return (
-              <Text
+              <Typography
                 key={`paragraph-${index}`}
-                text={paragraph}
                 style={{
                   margin: "1rem 0",
                 }}
-              />
+              >
+                {paragraph}
+              </Typography>
             );
           })}
         </Grid>

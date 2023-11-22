@@ -15,7 +15,7 @@ export function BigData() {
   return (
     <Container>
       <Grid container spacing={4}>
-        <Grid item container justifyContent={"center"} textAlign={"center"}>
+        <Grid container item justifyContent={"center"} textAlign={"center"}>
           <Typography
             style={{
               fontWeight: "bold",
@@ -24,43 +24,44 @@ export function BigData() {
             {textTitle}
           </Typography>
         </Grid>
-        <Grid item container spacing={2} textAlign={"justify"}>
-          {sectionText.map((text: string, index: number) => {
-            return (
-              <Grid item key={`section-text-${index}`}>
-                <Typography>{text}</Typography>
-              </Grid>
-            );
-          })}
-        </Grid>
-
-        <Grid
-          item
-          container
-          direction={{
-            xs: "column",
-            md: "row",
-          }}
-          spacing={4}
-        >
-          <Grid container item sm={6} direction={"column"} spacing={4}>
-            <Grid item textAlign={"justify"}>
-              <Typography variant="h5" fontWeight={"bold"}>
-                A RGR trabalha constantemente na evolução de seus serviços e
-                processos para garantir a satisfação dos nossos clientes
-              </Typography>
-            </Grid>
-            <Grid item>
-              <Typography variant="body1">
-                Entre em contato conosco para qualquer dúvida, solicitação ou
-                suporte. Estamos ansiosos para te ouvir e ajudar no que for
-                necessário!
-              </Typography>
-            </Grid>
+        <Grid container item direction={"column"} spacing={6}>
+          <Grid item container spacing={2} textAlign={"justify"}>
+            {sectionText.map((text: string, index: number) => {
+              return (
+                <Grid item key={`section-text-${index}`}>
+                  <Typography>{text}</Typography>
+                </Grid>
+              );
+            })}
           </Grid>
+          <Grid
+            container
+            item
+            direction={{
+              xs: "column",
+              md: "row",
+            }}
+            spacing={4}
+          >
+            <Grid container item sm={6} direction={"column"} spacing={4}>
+              <Grid item textAlign={"justify"}>
+                <Typography variant="h5" fontWeight={"bold"}>
+                  A RGR trabalha constantemente na evolução de seus serviços e
+                  processos para garantir a satisfação dos nossos clientes
+                </Typography>
+              </Grid>
+              <Grid item>
+                <Typography variant="body1">
+                  Entre em contato conosco para qualquer dúvida, solicitação ou
+                  suporte. Estamos ansiosos para te ouvir e ajudar no que for
+                  necessário!
+                </Typography>
+              </Grid>
+            </Grid>
 
-          <Grid item sm={6}>
-            <ContactForm />
+            <Grid item sm={6}>
+              <ContactForm />
+            </Grid>
           </Grid>
         </Grid>
       </Grid>

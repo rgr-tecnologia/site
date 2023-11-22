@@ -1,6 +1,14 @@
 "use client";
 import { LoadingButton } from "@mui/lab";
-import { TextField, Grid, InputLabel, Card, CardContent } from "@mui/material";
+import {
+  TextField,
+  Grid,
+  InputLabel,
+  Card,
+  CardContent,
+  Snackbar,
+  Alert,
+} from "@mui/material";
 import { useState } from "react";
 import { useForm, SubmitHandler, Controller } from "react-hook-form";
 
@@ -24,6 +32,8 @@ export const ContactForm = () => {
   });
 
   const [isLoading, setIsLoading] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [hasError, setHasError] = useState<Error[]>([]);
 
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
     setIsLoading(true);
@@ -36,67 +46,91 @@ export const ContactForm = () => {
         body: JSON.stringify(data),
       });
 
-      if (response.status === 200) {
-        reset();
-      } else if (response.status === 400) {
+      if (response.ok) {
+        setIsSuccess(true);
+        reset(defaultValues);
+      } else {
         throw new Error("Erro ao enviar email");
       }
     } catch (error) {
+      console.error(error);
       if (error instanceof Error) {
-        console.error(error.message);
+        setHasError([...hasError, error]);
       }
     }
     setIsLoading(false);
   };
 
   return (
-    <Card
-      style={{
-        backgroundColor: "#f5f5f5",
-      }}
-    >
-      <CardContent>
-        <form onSubmit={handleSubmit(onSubmit)}>
-          <Grid container spacing={2} justifyContent={"center"}>
-            <Grid container direction={"column"} item xs={12}>
-              <InputText
-                label="Nome"
-                name="name"
-                control={control}
-                rules={{ required: true }}
-              />
+    <>
+      <Card
+        style={{
+          backgroundColor: "#f5f5f5",
+        }}
+      >
+        <CardContent>
+          <form onSubmit={handleSubmit(onSubmit)}>
+            <Grid container spacing={2} justifyContent={"center"}>
+              <Grid container direction={"column"} item xs={12}>
+                <InputText
+                  label="Nome"
+                  name="name"
+                  control={control}
+                  rules={{ required: true }}
+                />
+              </Grid>
+              <Grid container direction={"column"} item xs={12}>
+                <InputText
+                  label="Email"
+                  name="email"
+                  control={control}
+                  rules={{ required: true }}
+                />
+              </Grid>
+              <Grid container direction={"column"} item xs={12}>
+                <InputText
+                  label="Mensagem"
+                  name="message"
+                  control={control}
+                  rules={{ required: true }}
+                />
+              </Grid>
+              <Grid container item xs={12}>
+                <LoadingButton
+                  loading={isLoading}
+                  variant="contained"
+                  type="submit"
+                  color="primary"
+                  fullWidth
+                >
+                  Enviar
+                </LoadingButton>
+              </Grid>
             </Grid>
-            <Grid container direction={"column"} item xs={12}>
-              <InputText
-                label="Email"
-                name="email"
-                control={control}
-                rules={{ required: true }}
-              />
-            </Grid>
-            <Grid container direction={"column"} item xs={12}>
-              <InputText
-                label="Mensagem"
-                name="message"
-                control={control}
-                rules={{ required: true }}
-              />
-            </Grid>
-            <Grid container item xs={12}>
-              <LoadingButton
-                loading={isLoading}
-                variant="contained"
-                type="submit"
-                color="primary"
-                fullWidth
-              >
-                Enviar
-              </LoadingButton>
-            </Grid>
-          </Grid>
-        </form>
-      </CardContent>
-    </Card>
+          </form>
+        </CardContent>
+      </Card>
+      <Snackbar
+        open={isSuccess}
+        autoHideDuration={6000}
+        onClose={() => setIsSuccess(false)}
+        anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
+      >
+        <Alert severity="success" onClose={() => setIsSuccess(false)}>
+          Email enviado com sucesso!.
+        </Alert>
+      </Snackbar>
+      <Snackbar
+        open={hasError.length > 0}
+        autoHideDuration={6000}
+        onClose={() => setHasError([])}
+        anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
+      >
+        <Alert severity="error" onClose={() => setHasError([])}>
+          Erro ao enviar email.
+        </Alert>
+      </Snackbar>
+    </>
   );
 };
 

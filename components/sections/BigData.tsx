@@ -15,7 +15,7 @@ const sectionText = [
 export function BigData() {
   return (
     <Container>
-      <Grid container spacing={2}>
+      <Grid container spacing={4}>
         <Grid item container justifyContent={"center"} textAlign={"center"}>
           <Text
             text={textTitle}
@@ -41,16 +41,10 @@ export function BigData() {
             xs: "column",
             md: "row",
           }}
-          spacing={2}
+          spacing={4}
         >
-          <Grid container item sm={6} spacing={2}>
-            <Grid
-              item
-              textAlign={{
-                xs: "justify",
-                sm: "center",
-              }}
-            >
+          <Grid container item sm={6} direction={"column"} spacing={4}>
+            <Grid item textAlign={"justify"}>
               <Typography variant="h5" fontWeight={"bold"}>
                 A RGR trabalha constantemente na evolução de seus serviços e
                 processos para garantir a satisfação dos nossos clientes

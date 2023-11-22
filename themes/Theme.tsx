@@ -22,7 +22,6 @@ const theme = createTheme({
     MuiCard: {
       styleOverrides: {
         root: {
-          border: ".09rem solid #EA1F29",
           boxShadow: "none",
         },
       },

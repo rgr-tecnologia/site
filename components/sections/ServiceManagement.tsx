@@ -94,6 +94,7 @@ export function ServiceManagement() {
                 <Card
                   style={{
                     width: "100%",
+                    border: ".09rem solid #EA1F29",
                   }}
                 >
                   <CardContent>

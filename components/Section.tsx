@@ -1,4 +1,5 @@
 import { CSSProperties, PropsWithChildren } from "react";
+import { Grid } from "@mui/material";
 
 type Props = {
   id?: string;
@@ -7,17 +8,17 @@ type Props = {
 
 export default function Section({ id, children, style }: Props) {
   return (
-    <section
-      id={id}
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
+    <Grid
+      container
+      direction={"column"}
+      alignItems={"center"}
+      sx={{
         backgroundColor: "#fff",
         ...style,
       }}
+      id={id}
     >
       {children}
-    </section>
+    </Grid>
   );
 }

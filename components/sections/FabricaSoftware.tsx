@@ -21,7 +21,15 @@ export function FabricaSoftware() {
   return (
     <Container>
       <Grid container direction={"column"} spacing={4}>
-        <Grid item container textAlign={"center"} xs={1}>
+        <Grid
+          item
+          container
+          textAlign={{
+            xs: "justify",
+            sm: "center",
+          }}
+          xs={1}
+        >
           <Text
             text={textTitle}
             style={{

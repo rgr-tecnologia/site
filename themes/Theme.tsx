@@ -18,6 +18,16 @@ const theme = createTheme({
       contrastText: "#fff",
     },
   },
+  components: {
+    MuiCard: {
+      styleOverrides: {
+        root: {
+          border: ".09rem solid #EA1F29",
+          boxShadow: "none",
+        },
+      },
+    },
+  },
 });
 
 export const Theme = ({ children }: { children: React.ReactNode }) => {

@@ -94,6 +94,8 @@ export function Header() {
               width={"100%"}
               height={"100%"}
               position={"relative"}
+              maxWidth={120}
+              maxHeight={40}
               sx={{
                 position: "relative",
                 aspectRatio: "2381/794",
@@ -152,6 +154,8 @@ export function Header() {
                 width={"100%"}
                 height={"100%"}
                 position={"relative"}
+                maxWidth={120}
+                maxHeight={40}
                 sx={{
                   position: "relative",
                   aspectRatio: "2381/794",

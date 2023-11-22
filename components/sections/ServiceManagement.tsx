@@ -1,21 +1,20 @@
 import Image from "next/image";
 import { CardList } from "../CardList/CardList";
-import { Text } from "../Text/Text";
-import bars from "@/public/icons/bars.svg";
-import check from "@/public/icons/check.svg";
-import deviceDesktop from "@/public/icons/device-desktop.svg";
-import deviceWatch from "@/public/icons/device-watch.svg";
-import { Card, CardContent, Container, Grid } from "@mui/material";
+import { Card, CardContent, Container, Grid, Typography } from "@mui/material";
+import WatchIcon from "@mui/icons-material/Watch";
+import CheckIcon from "@mui/icons-material/Check";
+import ComputerIcon from "@mui/icons-material/Computer";
+import SignalCellularAltIcon from "@mui/icons-material/SignalCellularAlt";
 
 type Service = {
   title: string;
   serviceList: string[];
-  icon: string;
+  icon: JSX.Element;
 };
 
 const services: Service[] = [
   {
-    icon: deviceDesktop,
+    icon: <ComputerIcon />,
     title: "Network Operation Center (NOC)",
     serviceList: [
       "Equipe especializada em monitoramento de ativos de TI",
@@ -26,7 +25,7 @@ const services: Service[] = [
     ],
   },
   {
-    icon: deviceWatch,
+    icon: <WatchIcon />,
     title: "Processos pré-definidos",
     serviceList: [
       "Processos bem definidos para rápida implantação",
@@ -36,7 +35,7 @@ const services: Service[] = [
     ],
   },
   {
-    icon: check,
+    icon: <CheckIcon />,
     title: "Infraestrutura Física",
     serviceList: [
       "Cabeamento estruturado",
@@ -47,7 +46,7 @@ const services: Service[] = [
     ],
   },
   {
-    icon: bars,
+    icon: <SignalCellularAltIcon />,
     title: "Field Services",
     serviceList: [
       "Atendimento Território Nacional",
@@ -67,8 +66,6 @@ export function ServiceManagement() {
           xs: "column",
           md: "row",
         }}
-        justifyContent={"center"}
-        alignItems={"center"}
       >
         {services.map((service: Service, index: number) => {
           return (
@@ -77,38 +74,26 @@ export function ServiceManagement() {
               item
               key={index}
               direction={"column"}
+              xs={12}
               sm={6}
               spacing={1}
             >
-              <Grid
-                container
-                item
-                direction={"row"}
-                justifyContent={"center"}
-                spacing={1}
-              >
+              <Grid item container direction={"row"} spacing={1}>
+                <Grid item>{service.icon}</Grid>
                 <Grid item>
-                  <Image unoptimized src={service.icon} alt={service.title} />
-                </Grid>
-                <Grid item>
-                  <Text
-                    style={{
-                      margin: "1rem 0",
-                      color: "#EA1F29",
-                      fontWeight: "bold",
-                      fontSize: "1.25rem",
-                    }}
-                    text={service.title}
-                  />
+                  <Typography
+                    color={"primary"}
+                    fontWeight={"bold"}
+                    variant="h6"
+                  >
+                    {service.title}
+                  </Typography>
                 </Grid>
               </Grid>
-              <Grid item container flexGrow={1} minHeight={"100%"}>
+              <Grid item container xs>
                 <Card
                   style={{
-                    height: "100%",
                     width: "100%",
-                    border: ".09rem solid #EA1F29",
-                    boxShadow: "none",
                   }}
                 >
                   <CardContent>

@@ -52,9 +52,30 @@ export function BigData() {
               </Grid>
               <Grid item>
                 <Typography variant="body1">
-                  Entre em contato conosco para qualquer dúvida, solicitação ou
-                  suporte. Estamos ansiosos para te ouvir e ajudar no que for
-                  necessário!
+                  Entre em contato conosco através dos contatos{" "}
+                  <a
+                    style={{
+                      color: "blue",
+                      textDecoration: "none",
+                      fontWeight: "bold",
+                    }}
+                    href="mailto:rh@rgrtecnologia.com.br"
+                  >
+                    rh@rgrtecnologia.com.br
+                  </a>{" "}
+                  ou{" "}
+                  <a
+                    style={{
+                      color: "blue",
+                      textDecoration: "none",
+                      fontWeight: "bold",
+                    }}
+                    href="mailto:suporte@rgrtecnologia.com.br"
+                  >
+                    suporte@rgrtecnologia.com.br
+                  </a>{" "}
+                  para axuliarmos em sua dúvida, solicitação ou suporte. Estamos
+                  ansiosos para te ouvir e ajudar no que for necessário!
                 </Typography>
               </Grid>
             </Grid>

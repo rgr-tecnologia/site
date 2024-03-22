@@ -43,7 +43,7 @@ export function BigData() {
             }}
             spacing={4}
           >
-            <Grid container item sm={6} direction={"column"} spacing={4}>
+            <Grid container item sm={12} direction={"column"} spacing={4}>
               <Grid item textAlign={"justify"}>
                 <Typography variant="h5" fontWeight={"bold"}>
                   A RGR trabalha constantemente na evolução de seus serviços e
@@ -57,10 +57,6 @@ export function BigData() {
                   necessário!
                 </Typography>
               </Grid>
-            </Grid>
-
-            <Grid item sm={6}>
-              <ContactForm />
             </Grid>
           </Grid>
         </Grid>

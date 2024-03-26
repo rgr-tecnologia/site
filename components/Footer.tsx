@@ -30,7 +30,7 @@ export function Footer() {
           >
             <Grid item>
               <Typography variant="body2">
-                Rua Enxovia 472 - Sala 805 - Edifício Neo Corporate Office (Zona
+                Rua Enxovia 472 - 8° andar - Edifício Neo Corporate Office (Zona
                 Sul) - São Paulo/SP - CEP 04711-030
               </Typography>
             </Grid>

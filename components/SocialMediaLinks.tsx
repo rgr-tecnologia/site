@@ -8,16 +8,14 @@ export const SocialMediaLinks = () => {
       <IconButton
         href="https://www.linkedin.com/company/rgr-tecnologia/"
         target="_blank"
-        color={
-          "inherit" /* TODO: Change to "primary" when the theme is ready */
-        }
+        color={"inherit"}
       >
         <LinkedInIcon />
       </IconButton>
       <IconButton
-        color={
-          "inherit" /* TODO: Change to "primary" when the theme is ready */
-        }
+        href="https://www.instagram.com/rgrtecnologia"
+        target="_blank"
+        color={"inherit"}
       >
         <InstagramIcon />
       </IconButton>

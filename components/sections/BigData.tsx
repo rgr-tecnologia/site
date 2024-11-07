@@ -74,7 +74,7 @@ export function BigData() {
                   >
                     suporte@rgrtecnologia.com.br
                   </a>{" "}
-                  para axuliarmos em sua dúvida, solicitação ou suporte. Estamos
+                  para auxiliarmos em sua dúvida, solicitação ou suporte. Estamos
                   ansiosos para te ouvir e ajudar no que for necessário!
                 </Typography>
               </Grid>
